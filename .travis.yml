@@ -1,0 +1,13 @@
+sudo: required
+language: scala
+scala:
+- 2.11.11
+jdk:
+- oraclejdk8
+services:
+- redis-server
+- mongodb
+before_script:
+- sleep 15  # Travis recommends waiting 15s for mongodb to start up
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

@@ -1,0 +1,9 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Used to display vote counts for all candidates
+GET     /                           controllers.HomeController.pollResults()
+
+# Used to cast a vote
+POST    /                           controllers.HomeController.castVote()

@@ -1,0 +1,50 @@
+swagger: "2.0"
+info:
+  description: "This is the documentation for the counting votes API."
+  version: "1.0.0"
+  title: "Counting votes"
+tags:
+- name: "Counting votes"
+schemes:
+- "http"
+paths:
+  /:
+    get:
+      tags:
+      - "Counting votes"
+      summary: "Displays vote counts for all candidates"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "Vote counts for all candidates are provided"
+    post:
+      tags:
+      - "Counting votes"
+      summary: "Cast a vote"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "Vote"
+        description: "The vote that a user wants to cast"
+        required: true
+        schema:
+          $ref: "#/definitions/Vote"
+      responses:
+        201:
+          description: "Voter successfully casted a vote"
+        403:
+          description: "Voter has used up all votes"
+        404:
+          description: "Invalid candidate"
+definitions:
+  Vote:
+    type: "object"
+    properties:
+      username:
+        type: "string"
+      candidate:
+        type: "string"
