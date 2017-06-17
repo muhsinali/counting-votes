@@ -8,15 +8,15 @@ See [below](https://github.com/muhsinali/counting-votes/blob/master/README.md#ho
 
 ### Key features:
 #### General
-- Implemented in a [TDD](https://github.com/muhsinali/counting-votes/blob/7c637c730f06494a4bc6ca533568f3ce504be5ef/test/VoterDAOTest.java) & [BDD](https://github.com/muhsinali/counting-votes/blob/master/test/resources/features/HomeController.feature) fashion using JUnit and Cucumber; code coverage is ~95%
-- Used [runtime dependency injection](https://github.com/muhsinali/counting-votes/blob/2426397301b306840ec6809cc506a034aafd31ef/app/controllers/HomeController.java#L21-L29)
-- [Configuration settings](https://github.com/muhsinali/counting-votes/blob/f11e7354275dfea6bc80a88220ee4f6b7ee2496d/conf/application.conf#L13-L17) are stored in `conf/application.conf`
+- Implemented in a [TDD](https://github.com/muhsinali/counting-votes/blob/master/test/VoterDAOTest.java) & BDD ([feature file](https://github.com/muhsinali/counting-votes/blob/master/test/resources/features/HomeController.feature) and [step definitions](https://github.com/muhsinali/counting-votes/blob/master/test/stepDefinitions/HomeControllerSteps.java)) fashion using JUnit and Cucumber; code coverage is ~95%
+- Used [runtime dependency injection](https://github.com/muhsinali/counting-votes/blob/93541c82d2a9ef2010834626602bead71ed1678d/app/controllers/HomeController.java#L21-L29)
+- [Configuration settings](https://github.com/muhsinali/counting-votes/blob/93541c82d2a9ef2010834626602bead71ed1678d/conf/application.conf#L13-L17) are stored in `conf/application.conf`
 
 #### Performance
-- Utilised [indexes](https://github.com/muhsinali/counting-votes/blob/7c637c730f06494a4bc6ca533568f3ce504be5ef/app/models/Voter.java#L17-L25) and covered queries in mongo database
-- Used [Redis to serve vote counts](https://github.com/muhsinali/counting-votes/blob/7c637c730f06494a4bc6ca533568f3ce504be5ef/app/daos/VoterDAO.java#L71-L78) - accessing in-memory DB is much faster than looping over the all votes stored in a Mongo database as they're stored on disk
+- Utilised [indexes](https://github.com/muhsinali/counting-votes/blob/93541c82d2a9ef2010834626602bead71ed1678d/app/models/Voter.java#L17-L26) and covered queries in mongo database
+- Used [Redis to serve vote counts](https://github.com/muhsinali/counting-votes/blob/93541c82d2a9ef2010834626602bead71ed1678d/app/daos/VoterDAO.java#L71-L78) - accessing in-memory DB is much faster than looping over the all votes stored in a Mongo database as they're stored on disk
 - Ensured that updates made to any existing voter's voting preferences are made directly in the database. Saves having to pull the document, convert to a Java object, update, convert back to a Mongo document, and insert it back into the database (and removing the old document).
-- Added a [Gzip compression filter](https://github.com/muhsinali/counting-votes/blob/7c637c730f06494a4bc6ca533568f3ce504be5ef/app/Filters.java) to Gzip server responses
+- Added a [Gzip compression filter](https://github.com/muhsinali/counting-votes/blob/master/app/Filters.java) to Gzip server responses
 
 
 ### Tech stack
