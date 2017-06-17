@@ -8,7 +8,7 @@ See [below](https://github.com/muhsinali/counting-votes/blob/master/README.md#ho
 
 ### Key features:
 #### General
-- Implemented in a [TDD](https://github.com/muhsinali/counting-votes/blob/master/test/VoterDAOTest.java) & BDD ([feature file](https://github.com/muhsinali/counting-votes/blob/master/test/resources/features/HomeController.feature) and [step definitions](https://github.com/muhsinali/counting-votes/blob/master/test/stepDefinitions/HomeControllerSteps.java)) fashion using JUnit and Cucumber; code coverage is ~95%
+- Code coverage is ~95%; implemented in a [TDD](https://github.com/muhsinali/counting-votes/blob/master/test/VoterDAOTest.java) & BDD ([feature file](https://github.com/muhsinali/counting-votes/blob/master/test/resources/features/HomeController.feature) and [step definitions](https://github.com/muhsinali/counting-votes/blob/master/test/stepDefinitions/HomeControllerSteps.java)) fashion using JUnit and Cucumber
 - Used [runtime dependency injection](https://github.com/muhsinali/counting-votes/blob/93541c82d2a9ef2010834626602bead71ed1678d/app/controllers/HomeController.java#L21-L29)
 - [Configuration settings](https://github.com/muhsinali/counting-votes/blob/93541c82d2a9ef2010834626602bead71ed1678d/conf/application.conf#L13-L17) are stored in `conf/application.conf`
 
